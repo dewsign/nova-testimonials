@@ -28,7 +28,7 @@ class CreateReviewsTable extends Migration
             $table->text('quote');
 
             $table->unsignedInteger('review_category_id')->nullable();
-            $table->foreign('review_category_id')->references('id')->on('review_categories')->onDelete('cascade');
+            $table->foreign('review_category_id')->references('id')->on('review_categories')->onDelete('set null');
             $table->timestamps();
         });
     }

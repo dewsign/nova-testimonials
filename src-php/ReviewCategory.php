@@ -10,6 +10,6 @@ class ReviewCategory extends Model
 
     public function reviews()
     {
-        return $this->hasMany(config('nova-reviews.models.review', Review::class));
+        return $this->hasMany(config('nova-reviews.models.review'));
     }
 }

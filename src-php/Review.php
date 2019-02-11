@@ -14,7 +14,7 @@ class Review extends BaseModel
 
     public function review_category()
     {
-        return $this->belongsTo(ReviewCategory::class);
+        return $this->belongsTo(config('nova-reviews.models.category', ReviewCategory::class));
     }
 
     public function getCategoryAttribute()

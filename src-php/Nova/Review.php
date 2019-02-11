@@ -55,7 +55,7 @@ class Review extends Resource
             Text::make('Job Title'),
             Textarea::make('Quote'),
 
-            BelongsTo::make('Review Category', 'review_category', ReviewCategory::class)->nullable(),
+            BelongsTo::make('Review Category', 'review_category', config('nova-reviews.resources.category', ReviewCategory::class))->nullable(),
         ];
     }
 }

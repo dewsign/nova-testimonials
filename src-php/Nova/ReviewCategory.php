@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\HasMany;
+use Dewsign\NovaReviews\Nova\Review;
 
 class ReviewCategory extends Resource
 {
@@ -51,7 +52,7 @@ class ReviewCategory extends Resource
         return [
             Text::make('Name'),
 
-            HasMany::make('Reviews'),
+            HasMany::make('Reviews', 'reviews', config('nova-reviews.resources.review', Review::class)),
         ];
     }
 }

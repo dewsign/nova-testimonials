@@ -1,22 +1,22 @@
 <?php
 
-namespace Dewsign\NovaReviews\Nova;
+namespace Dewsign\NovaTestimonials\Nova;
 
 use Laravel\Nova\Resource;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\HasMany;
-use Dewsign\NovaReviews\Nova\Review;
+use Dewsign\NovaTestimonials\Nova\Testimonial;
 
-class ReviewCategory extends Resource
+class TestimonialCategory extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'Dewsign\NovaReviews\ReviewCategory';
+    public static $model = 'Dewsign\NovaTestimonials\TestimonialCategory';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -34,11 +34,11 @@ class ReviewCategory extends Resource
         'name',
     ];
 
-    public static $group = 'Reviews';
+    public static $group = 'Testimonials';
 
     public static function label()
     {
-        return __('Review Categories');
+        return __('Testimonial Categories');
     }
 
     /**
@@ -52,7 +52,7 @@ class ReviewCategory extends Resource
         return [
             Text::make('Name'),
 
-            HasMany::make('Reviews', 'reviews', config('nova-reviews.resources.review', Review::class)),
+            HasMany::make('Testimonials', 'testimonials', config('nova-testimonials.resources.testimonial')),
         ];
     }
 }

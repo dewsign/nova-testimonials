@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReviewsTable extends Migration
+class CreateTestimonialsTable extends Migration
 {
      /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('review_categories', function (Blueprint $table) {
+        Schema::create('testimonial_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
         });
 
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->increments('id');
             $table->active();
             $table->featured();
@@ -27,8 +27,8 @@ class CreateReviewsTable extends Migration
             $table->string('job_title');
             $table->text('quote');
 
-            $table->unsignedInteger('review_category_id')->nullable();
-            $table->foreign('review_category_id')->references('id')->on('review_categories')->onDelete('set null');
+            $table->unsignedInteger('testimonial_category_id')->nullable();
+            $table->foreign('testimonial_category_id')->references('id')->on('testimonial_categories')->onDelete('set null');
             $table->timestamps();
         });
     }
@@ -40,7 +40,7 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('review_categories');
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('testimonial_categories');
+        Schema::dropIfExists('testimonials');
     }
 }

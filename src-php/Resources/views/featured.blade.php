@@ -1,10 +1,10 @@
-<div class="reviews">]
-    <h3>Featured Reviews</h3>
-    <ul class="reviews-list">
-        @foreach(config('nova-reviews.models.review')::active()->featured()->get() as $review)
-            <li class="reviews-list__item">
-                <p>{{ $review->quote }}</p>
-                <h3>{{ $review->name }}, {{ $review->job_title }}</h3>
+<div class="testimonials">]
+    <h3>Featured Testimonials</h3>
+    <ul class="testimonials-list">
+        @foreach(config('nova-testimonials.models.testimonial')::active()->featured()->get() as $testimonial)
+            <li class="testimonials-list__item">
+                <p>{{ $testimonial->quote }}</p>
+                <h3>{{ $testimonial->name }}, {{ $testimonial->job_title }}</h3>
             </li>
         @endforeach
     </ul>

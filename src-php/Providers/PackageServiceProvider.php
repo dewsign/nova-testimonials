@@ -1,12 +1,12 @@
 <?php
 
-namespace Dewsign\NovaReviews\Providers;
+namespace Dewsign\NovaTestimonials\Providers;
 
 use Laravel\Nova\Nova;
 use Illuminate\Routing\Router;
-use Dewsign\NovaReviews\Nova\Review;
+use Dewsign\NovaTestimonials\Nova\Testimonial;
 use Illuminate\Support\ServiceProvider;
-use Dewsign\NovaReviews\Nova\ReviewCategory;
+use Dewsign\NovaTestimonials\Nova\TestimonialCategory;
 
 class PackageServiceProvider extends ServiceProvider
 {
@@ -32,13 +32,13 @@ class PackageServiceProvider extends ServiceProvider
     public function register()
     {
         Nova::resources([
-            Review::class,
-            ReviewCategory::class,
+            Testimonial::class,
+            TestimonialCategory::class,
         ]);
 
         $this->mergeConfigFrom(
             $this->getConfigsPath(),
-            'nova-reviews'
+            'nova-testimonials'
         );
     }
 
@@ -50,7 +50,7 @@ class PackageServiceProvider extends ServiceProvider
     private function publishConfigs()
     {
         $this->publishes([
-            $this->getConfigsPath() => config_path('nova-reviews.php'),
+            $this->getConfigsPath() => config_path('nova-testimonials.php'),
         ], 'config');
     }
     /**
@@ -60,7 +60,7 @@ class PackageServiceProvider extends ServiceProvider
      */
     private function getConfigsPath()
     {
-        return __DIR__.'/../Config/nova-reviews.php';
+        return __DIR__.'/../Config/nova-testimonials.php';
     }
 
     /**
@@ -84,9 +84,9 @@ class PackageServiceProvider extends ServiceProvider
      */
     private function bootViews()
     {
-        $this->loadViewsFrom(__DIR__.'/../Resources/views', 'nova-reviews');
+        $this->loadViewsFrom(__DIR__.'/../Resources/views', 'nova-testimonials');
         $this->publishes([
-            __DIR__.'/../Resources/views' => resource_path('views/vendor/nova-reviews'),
+            __DIR__.'/../Resources/views' => resource_path('views/vendor/nova-testimonials'),
         ]);
     }
 
@@ -98,7 +98,7 @@ class PackageServiceProvider extends ServiceProvider
     private function bootAssets()
     {
         $this->publishes([
-            __DIR__.'/../Resources/assets/js' => resource_path('assets/js/vendor/nova-reviews'),
+            __DIR__.'/../Resources/assets/js' => resource_path('assets/js/vendor/nova-testimonials'),
         ], 'js');
     }
 

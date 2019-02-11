@@ -1,4 +1,4 @@
 # **WIP**
-# Dewsign Nova Reviews
+# Dewsign Nova Testimonials
 
-A dead simple package to add a reviews cms to a nova application. Supports review categories out of the box, and is easily extendable to add more functionality.
+A dead simple package to add a testimonials cms to a nova application. Supports testimonial categories out of the box, and is easily extendable to add more functionality.

@@ -1,6 +1,6 @@
 {
-    "name": "dewsign/nova-reviews",
-    "description": "A package to add a reviews cms to a nova application",
+    "name": "dewsign/nova-testimonials",
+    "description": "A package to add a testimonials cms to a nova application",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -21,13 +21,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Dewsign\\NovaReviews\\": "src-php/"
+            "Dewsign\\NovaTestimonials\\": "src-php/"
         }
     },
     "extra":{
         "laravel": {
             "providers": [
-                "Dewsign\\NovaReviews\\Providers\\PackageServiceProvider"
+                "Dewsign\\NovaTestimonials\\Providers\\PackageServiceProvider"
             ]
         }
     }

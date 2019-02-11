@@ -1,6 +1,6 @@
 <?php
 
-namespace Dewsign\NovaReviews\Nova;
+namespace Dewsign\NovaTestimonials\Nova;
 
 use Laravel\Nova\Resource;
 use Laravel\Nova\Fields\ID;
@@ -9,16 +9,16 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsTo;
-use Dewsign\NovaReviews\Nova\ReviewCategory;
+use Dewsign\NovaTestimonials\Nova\TestimonialCategory;
 
-class Review extends Resource
+class Testimonial extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'Dewsign\NovaReviews\Review';
+    public static $model = 'Dewsign\NovaTestimonials\Testimonial';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -38,7 +38,7 @@ class Review extends Resource
         'quote',
     ];
 
-    public static $group = 'Reviews';
+    public static $group = 'Testimonials';
 
     /**
      * Get the fields displayed by the resource.
@@ -55,7 +55,7 @@ class Review extends Resource
             Text::make('Job Title'),
             Textarea::make('Quote'),
 
-            BelongsTo::make('Review Category', 'review_category', config('nova-reviews.resources.category'))->nullable(),
+            BelongsTo::make('Testimonial Category', 'testimonial_category', config('nova-testimonials.resources.category'))->nullable(),
         ];
     }
 }

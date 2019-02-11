@@ -1,6 +1,6 @@
-<div class="review">
-    @if($review = config('nova-reviews.models.review')::active()->inRandomOrder()->first())
-        <p>{{ $review->quote }}</p>
-        <h3>{{ $review->name }}, {{ $review->job_title }}</h3>
+<div class="testimonial">
+    @if($testimonial = config('nova-testimonials.models.testimonial')::active()->inRandomOrder()->first())
+        <p>{{ $testimonial->quote }}</p>
+        <h3>{{ $testimonial->name }}, {{ $testimonial->job_title }}</h3>
     @endif
 </div>

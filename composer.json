@@ -1,6 +1,6 @@
 {
     "name": "dewsign/nova-testimonials",
-    "description": "A package to add a testimonials cms to a nova application",
+    "description": "A testimonials package for Laravel Nova",
     "type": "library",
     "license": "MIT",
     "authors": [

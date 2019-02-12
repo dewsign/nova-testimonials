@@ -23,6 +23,7 @@ class CreateTestimonialsTable extends Migration
             $table->increments('id');
             $table->active();
             $table->featured();
+            $table->sortable();
             $table->string('name');
             $table->string('job_title');
             $table->text('quote');

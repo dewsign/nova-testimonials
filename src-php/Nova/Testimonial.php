@@ -9,10 +9,14 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsTo;
+use Dewsign\NovaFieldSortable\IsSorted;
+use Dewsign\NovaFieldSortable\Sortable;
 use Dewsign\NovaTestimonials\Nova\TestimonialCategory;
 
 class Testimonial extends Resource
 {
+    use IsSorted;
+
     /**
      * The model the resource corresponds to.
      *
@@ -49,6 +53,8 @@ class Testimonial extends Resource
     public function fields(Request $request)
     {
         return [
+            Sortable::make('Sort Order', 'id'),
+            ID::make(),
             Boolean::make('Active'),
             Boolean::make('Featured'),
             Text::make('Name'),

@@ -13,7 +13,7 @@
         "php": ">=7.0.0",
         "laravel/framework": ">=5.0.0",
         "laravel/nova": "^1.1",
-        "dewsign/nova-repeater-blocks": "^1.3",
+        "dewsign/nova-field-sortable": "^0.1.3",
         "maxfactor/support": "2.2.2"
     },
     "require-dev": {

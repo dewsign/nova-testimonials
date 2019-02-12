@@ -11,7 +11,7 @@ use Maxfactor\Support\Model\Traits\HasActiveState;
 
 class Testimonial extends BaseModel
 {
-    use HasSortOder;
+    use HasSortOrder;
     use CanBeFeatured;
     use HasActiveState;
 

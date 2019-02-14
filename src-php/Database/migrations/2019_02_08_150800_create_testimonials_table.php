@@ -24,8 +24,8 @@ class CreateTestimonialsTable extends Migration
             $table->active();
             $table->featured();
             $table->sortable();
-            $table->string('name');
-            $table->string('job_title');
+            $table->string('author_name');
+            $table->string('author_description');
             $table->text('quote');
 
             $table->unsignedInteger('testimonial_category_id')->nullable();

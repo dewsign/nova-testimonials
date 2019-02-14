@@ -29,7 +29,7 @@ class Testimonial extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'author_name';
 
     /**
      * The columns that should be searched.
@@ -37,8 +37,8 @@ class Testimonial extends Resource
      * @var array
      */
     public static $search = [
-        'name',
-        'job_title',
+        'author_name',
+        'author_description',
         'quote',
     ];
 
@@ -57,8 +57,8 @@ class Testimonial extends Resource
             ID::make(),
             Boolean::make('Active'),
             Boolean::make('Featured'),
-            Text::make('Name'),
-            Text::make('Job Title'),
+            Text::make('Author Name'),
+            Text::make('Author Description'),
             Textarea::make('Quote'),
 
             BelongsTo::make('Testimonial Category', 'testimonial_category', config('nova-testimonials.resources.category'))->nullable(),

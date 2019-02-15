@@ -58,3 +58,16 @@ return [
     ]
 ];
 ```
+
+### Images
+
+You can use your preferred image field & disk by replacing the default in the `nova-testimonials.php` config. By default the Nova Image field is used.
+
+```php
+// config/nova-testimonials.php
+
+    'images' => [
+        'field' => 'Laravel\Nova\Fields\Image',
+        'disk' => 'public',
+    ],
+```

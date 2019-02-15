@@ -24,12 +24,14 @@ class CreateTestimonialsTable extends Migration
             $table->active();
             $table->featured();
             $table->sortable();
-            $table->string('name');
-            $table->string('job_title');
+            $table->string('author_name');
+            $table->string('author_description');
             $table->text('quote');
+            $table->string('image');
+            $table->string('image_alt');
 
-            $table->unsignedInteger('testimonial_category_id')->nullable();
-            $table->foreign('testimonial_category_id')->references('id')->on('testimonial_categories')->onDelete('set null');
+            $table->unsignedInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('testimonial_categories')->onDelete('set null');
             $table->timestamps();
         });
     }

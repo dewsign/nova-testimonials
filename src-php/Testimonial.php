@@ -15,13 +15,8 @@ class Testimonial extends BaseModel
     use CanBeFeatured;
     use HasActiveState;
 
-    public function testimonial_category()
+    public function category()
     {
-        return $this->belongsTo(config('nova-testimonials.models.category'));
-    }
-
-    public function getCategoryAttribute()
-    {
-        return $this->testimonial_category()->first();
+        return $this->belongsTo(config('nova-testimonials.models.category'), 'category_id');
     }
 }

@@ -34,7 +34,10 @@ class TestimonialCategory extends Resource
         'name',
     ];
 
-    public static $group = 'Testimonials';
+    public static function group()
+    {
+        return __('Testimonials');
+    }
 
     public static function label()
     {

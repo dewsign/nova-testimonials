@@ -5,7 +5,7 @@
             @foreach($category->testimonials as $item)
                 <li>
                     <p>{{ $item->quote }}</p>
-                    <h3>{{ $item->name }}, {{ $item->job_title }}</h3>
+                    <h3>{{ $item->author_name }}, {{ $item->author_description }}</h3>
                 </li>
             @endforeach
         </ul>

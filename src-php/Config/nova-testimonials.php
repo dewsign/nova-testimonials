@@ -8,5 +8,9 @@ return [
     'resources' => [
         'testimonial' => 'Dewsign\NovaTestimonials\Nova\Testimonial',
         'category' => 'Dewsign\NovaTestimonials\Nova\TestimonialCategory',
-    ]
+    ],
+    'images' => [
+        'field' => 'Laravel\Nova\Fields\Image',
+        'disk' => 'public',
+    ],
 ];

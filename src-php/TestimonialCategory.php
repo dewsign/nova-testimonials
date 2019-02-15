@@ -10,6 +10,6 @@ class TestimonialCategory extends Model
 
     public function testimonials()
     {
-        return $this->hasMany(config('nova-testimonials.models.testimonial'));
+        return $this->hasMany(config('nova-testimonials.models.testimonial'), 'category_id');
     }
 }

@@ -42,7 +42,10 @@ class Testimonial extends Resource
         'quote',
     ];
 
-    public static $group = 'Testimonials';
+    public static function group()
+    {
+        return __('Testimonials');
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -60,8 +63,11 @@ class Testimonial extends Resource
             Text::make('Author Name'),
             Text::make('Author Description'),
             Textarea::make('Quote'),
+            config('nova-testimonials.images.field')::make('Image')
+                ->disk(config('nova-testimonials.images.disk', 'public')),
+            Text::make('Image Alt'),
 
-            BelongsTo::make('Testimonial Category', 'testimonial_category', config('nova-testimonials.resources.category'))->nullable(),
+            BelongsTo::make('Testimonial Category', 'category', config('nova-testimonials.resources.category'))->nullable(),
         ];
     }
 }
